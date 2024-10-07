@@ -2,6 +2,7 @@ import os
 import time
 import base64
 import platform
+import pyperclip
 from Crypto.Cipher import AES
 from Crypto.Random import get_random_bytes
 from Crypto.Util.Padding import pad, unpad
@@ -52,7 +53,9 @@ while True:
         message = input('Enter A Message: ')
         encrypted = encrypt_AES(key, message)
         print('')
-        print(f"Encrypted Message: {encrypted}")
+        print(f"Encrypted Message (copied to clipboard):")
+        print(f"{encrypted}")
+        pyperclip.copy(encrypted)
         print('')
 
     elif operation_number == "2":
@@ -67,7 +70,9 @@ while True:
             continue
         
         print('')
-        print(f"Decrypted: {decrypted}")
+        print(f"Decrypted (copied to clipboard):")
+        print(f"{decrypted}")
+        pyperclip.copy(decrypted)
         print('')
 
     elif operation_number == "0":

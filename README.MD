@@ -2,7 +2,7 @@
 A simple password manager app built with Python to securely store and retrieve passwords for different services. 
 
 ## Installation
-An offline version of the required .whl file for pycryptodome is available. You can install it by following these steps:
+Offline versions of the required .whl files for the requirements are available. You can install it by following these steps:
 ```
-pip install pycryptodome*.whl
+pip install --no-index --find-links={path/to/repo} -r requirements.txt
 ```
